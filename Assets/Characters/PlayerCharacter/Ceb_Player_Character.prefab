@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8194348402743420500
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93cff42461e6114fa1404f37974c6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 3.2
   groundDrag: 5
   orientation: {fileID: 2680775875449064382}
 --- !u!114 &2464654697852976634
@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ec6f72611c34664488c91d215f34d36d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.978
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec6f72611c34664488c91d215f34d36d,
         type: 3}

@@ -1,5 +1,130 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5995072572316443350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f29d5d8a82bd44d9b748619b1c3d5a, type: 3}
+  m_Name: Easy Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 168, y: 152}
+  ports:
+    keys:
+    - previousNodes
+    - nextNode
+    - nextNode0
+    values:
+    - _fieldName: previousNodes
+      _node: {fileID: -5995072572316443350}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode
+      _node: {fileID: -5995072572316443350}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode0
+      _node: {fileID: -5995072572316443350}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 1
+  previousNodes: {fileID: 0}
+  nextNode: {fileID: 0}
+  characterDialogue:
+    text: Il est partie y'a 5 secondes a peine.
+    associatedCharacter: {fileID: 11400000, guid: f3d30272107daeb4298658183833a8e3,
+      type: 2}
+    isExpanded: 0
+    scrollPos: {x: 0, y: 0}
+  hasPlayerResponses: 1
+  playerResponses:
+  - text: Mince il me faut un de ses documents, je vais check son bureau rapidement.
+    associatedCharacter: {fileID: 0}
+    isExpanded: 1
+    scrollPos: {x: 0, y: 4}
+  showCharacterDialogue: 1
+--- !u!114 &-1876323710324940282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f29d5d8a82bd44d9b748619b1c3d5a, type: 3}
+  m_Name: Easy Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 168, y: -200}
+  ports:
+    keys:
+    - previousNodes
+    - nextNode
+    - nextNode0
+    values:
+    - _fieldName: previousNodes
+      _node: {fileID: -1876323710324940282}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode
+      _node: {fileID: -1876323710324940282}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: nextNode0
+      _node: {fileID: -1876323710324940282}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 1
+  previousNodes: {fileID: 0}
+  nextNode: {fileID: 0}
+  characterDialogue:
+    text: Aller, j'en ai bien besoin en plus.
+    associatedCharacter: {fileID: 11400000, guid: f3d30272107daeb4298658183833a8e3,
+      type: 2}
+    isExpanded: 0
+    scrollPos: {x: 0, y: 0}
+  hasPlayerResponses: 1
+  playerResponses:
+  - text: Il me reste un document a remplir, j'ai fini dans une minute, descend sans
+      moi je te rejoins
+    associatedCharacter: {fileID: 0}
+    isExpanded: 1
+    scrollPos: {x: 0, y: 0}
+  showCharacterDialogue: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 1363373394341718185}
+  - {fileID: -1876323710324940282}
+  - {fileID: -5995072572316443350}
   root: {fileID: 1363373394341718185}
 --- !u!114 &1363373394341718185
 MonoBehaviour:
@@ -34,6 +161,8 @@ MonoBehaviour:
     - previousNodes
     - nextNode
     - nextNode0
+    - nextNode1
+    - nextNode2
     values:
     - _fieldName: previousNodes
       _node: {fileID: 1363373394341718185}
@@ -62,18 +191,44 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 1
       _dynamic: 1
+    - _fieldName: nextNode1
+      _node: {fileID: 1363373394341718185}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 1
+    - _fieldName: nextNode2
+      _node: {fileID: 1363373394341718185}
+      _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 1
   previousNodes: {fileID: 0}
   nextNode: {fileID: 0}
   characterDialogue:
-    text: "yfu\xE8frtwsre"
+    text: Hey, qu'es ce que tu cherche ?
     associatedCharacter: {fileID: 11400000, guid: f3d30272107daeb4298658183833a8e3,
       type: 2}
     isExpanded: 0
     scrollPos: {x: 0, y: 0}
   hasPlayerResponses: 1
   playerResponses:
-  - text: 
+  - text: Ca te dit de partir en pause ?
     associatedCharacter: {fileID: 0}
-    isExpanded: 0
+    isExpanded: 1
+    scrollPos: {x: 0, y: 0}
+  - text: Tu sait ou est Richard ?
+    associatedCharacter: {fileID: 0}
+    isExpanded: 1
+    scrollPos: {x: 0, y: 0}
+  - text: "Rien, t'inqui\xE8te pas."
+    associatedCharacter: {fileID: 0}
+    isExpanded: 1
     scrollPos: {x: 0, y: 0}
   showCharacterDialogue: 1
