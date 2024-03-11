@@ -81,6 +81,7 @@ namespace EasyDialogue.Samples
         public item_data heldItem = new item_data();
 
         private readonly string ItemNameLookupString = "{ItemName}";
+        // private readonly string Tempo = "{Topem}";
         private readonly string ItemTypeLookupString = "{ItemType}";
 
         public string Evaluate(ref string _ogDialogue)
@@ -89,7 +90,15 @@ namespace EasyDialogue.Samples
             if (heldItem.displayName != null)
             {
                 result = result.Replace(ItemNameLookupString, heldItem.displayName);
+                // result = result.Replace(Tempo, "blabla");
                 result = result.Replace(ItemTypeLookupString, heldItem.TypeString());
+
+                int start = result.IndexOf("wazaa");
+
+                if (start > 0)
+                {
+
+                }
             }
             return result;
         }
