@@ -20,6 +20,36 @@ public class PlayerInteraction : MonoBehaviour
             Animation
             Emote1();
         }*/
+
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PerformEmote();        
+        }
+        
+
+        void PerformEmote()
+        {
+            // Assuming the emote is a simple animation, you can start it here
+            // Start your emote animation
+
+            // Cast a ray from the player's position in the direction they are facing
+            Debug.Log("lul");
+            RaycastHit hit;
+            Debug.Log("biteu");
+            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            {
+                Debug.Log("bonjour");
+                // The ray hit something, you can now send a message to the NPC
+                // For example, you could use a custom event or a direct method call
+                // depending on your architecture
+                GameObject emoteRaycastObject = new GameObject("EmoteRaycastObject");
+                emoteRaycastObject.transform.position = hit.point;
+                emoteRaycastObject.tag = "EmoteRaycast";
+                Debug.Log(hit.point);
+            }
+        }
+
     }
 
     void CheckInteraction()
@@ -73,17 +103,4 @@ public class PlayerInteraction : MonoBehaviour
             currentInteractable = null;
         }
     }
-    /*
-    public void Emote1()
-    {
-        RaycastHit hit;
-
-        DSGGCFGSDJKFH(hit);
-        if (hit.ToString() == "PNJ1")
-        {
-            hit.chgdfgsdh.EventPnj("Sneak");
-        }
-
-    }*/
-
 }
