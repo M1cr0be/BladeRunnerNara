@@ -204,11 +204,20 @@ namespace EasyDialogue.Samples
         private void ShowPlayerResponses(string[] _responses)
         {
             for (int i = 0;
-                i < _responses.Length;
+                i < playerChoices.Length;
+                
                 ++i)
             {
-                playerChoices[i].text = _responses[i];
-                playerChoices[i].transform.parent.parent.gameObject.SetActive(true);
+                if (i < _responses.Length)
+                {
+                    playerChoices[i].text = _responses[i];
+                    playerChoices[i].transform.parent.parent.gameObject.SetActive(true);
+                }
+                else
+                {
+                    playerChoices[i].transform.parent.parent.gameObject.SetActive(false);
+                }
+                
             }
         }
 

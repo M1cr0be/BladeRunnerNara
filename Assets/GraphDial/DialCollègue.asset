@@ -24,7 +24,10 @@ MonoBehaviour:
       _node: {fileID: -5995072572316443350}
       _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: nextNode1
+        node: {fileID: 1363373394341718185}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -59,7 +62,7 @@ MonoBehaviour:
   playerResponses:
   - text: Mince il me faut un de ses documents, je vais check son bureau rapidement.
     associatedCharacter: {fileID: 0}
-    isExpanded: 1
+    isExpanded: 0
     scrollPos: {x: 0, y: 4}
   showCharacterDialogue: 1
 --- !u!114 &-1876323710324940282
@@ -86,7 +89,10 @@ MonoBehaviour:
       _node: {fileID: -1876323710324940282}
       _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: nextNode0
+        node: {fileID: 1363373394341718185}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
@@ -123,7 +129,7 @@ MonoBehaviour:
       moi je te rejoins
     associatedCharacter: {fileID: 0}
     isExpanded: 1
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 4}
   showCharacterDialogue: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -186,7 +192,10 @@ MonoBehaviour:
       _node: {fileID: 1363373394341718185}
       _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: previousNodes
+        node: {fileID: -1876323710324940282}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 1
@@ -195,7 +204,10 @@ MonoBehaviour:
       _node: {fileID: 1363373394341718185}
       _typeQualifiedName: EasyDialogue.EasyDialogueNode, EasyDialogue, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: previousNodes
+        node: {fileID: -5995072572316443350}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 1
