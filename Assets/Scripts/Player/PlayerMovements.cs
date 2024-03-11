@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
@@ -43,6 +44,19 @@ public class PlayerMovements : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
+
+
+    /*public void EventPNJ(string MonEvent)
+    {
+        if (MonEvent == "Sneak")
+        {
+            print("Coucou");
+        }
+        else if (MonEvent == "coucou")
+        {
+
+        }
+    }*/
 
     private void MovePlayer()
     {

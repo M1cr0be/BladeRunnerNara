@@ -15,6 +15,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
         }
+        /*if (Input.GetKeyUp(KeyCode.G))
+        {
+            Animation
+            Emote1();
+        }*/
     }
 
     void CheckInteraction()
@@ -68,5 +73,17 @@ public class PlayerInteraction : MonoBehaviour
             currentInteractable = null;
         }
     }
+    /*
+    public void Emote1()
+    {
+        RaycastHit hit;
+
+        DSGGCFGSDJKFH(hit);
+        if (hit.ToString() == "PNJ1")
+        {
+            hit.chgdfgsdh.EventPnj("Sneak");
+        }
+
+    }*/
 
 }
