@@ -33,6 +33,8 @@ namespace EasyDialogue.Samples
         private EasyDialogueManager easyDialogueManager;
         private Canvas myCanvas;
 
+        private PlayerMovements playerMouvement;
+
         #endregion
 
         #region Setup And Input
@@ -44,6 +46,7 @@ namespace EasyDialogue.Samples
             easyDialogueManager.OnDialogueProgressed += OnDialogueProgressedHandler;
             easyDialogueManager.OnDialogueEnded += (EasyDialogueGraph _graph) => Debug.Log($"Dialogue ended on graph {_graph.name}");
             InitializeDialogue();
+            playerMouvement = GameObject.Find("Player").GetComponent<PlayerMovements>();
         }
 
         private void OnDialogueProgressedHandler(EasyDialogueGraph _graph, dialogue_line _line)
@@ -137,6 +140,9 @@ namespace EasyDialogue.Samples
             if (easyDialogueManager.EndDialogueEncounter(ref currentGraph))
             {
                 InitializeDialogue();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                playerMouvement.enabled = true;
             }
         }
 

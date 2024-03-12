@@ -12,8 +12,10 @@ public class StartDial : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Test");
         if(other == player)
         {
+            Debug.Log("Test2");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             playerMouvement.enabled = false;
