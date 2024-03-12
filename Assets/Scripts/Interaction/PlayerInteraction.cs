@@ -29,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange, npcLayer))
             {
-                NPC npc = hit.collider.GetComponent<NPC>();
+                NPC_Interractions npc = hit.collider.GetComponent<NPC_Interractions>();
                 if (npc != null)
                 {
                     npc.PerformAction(); // Assuming NPC has a method to perform an action
