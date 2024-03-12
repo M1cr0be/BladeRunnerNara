@@ -5,26 +5,14 @@ using UnityEngine;
 public class NPC_Interractions : MonoBehaviour
 
 {
-    public GameObject PNJ;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public class NPC : MonoBehaviour
-    {
+     
         public void PerformAction()
         {
             // Example: Play an animation
             GetComponent<Animator>().Play("YourAnimationName");
-        }
+            Debug.Log("Action performed on NPC");
     }
+
 
     /*public void PerformAction()
     {
