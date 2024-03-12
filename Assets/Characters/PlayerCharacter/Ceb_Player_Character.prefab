@@ -122,10 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ddbbf388d739d4abdb1a64aab4e2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 5
-  npcLayer:
-    serializedVersion: 2
-    m_Bits: 0
   playerReach: 3
 --- !u!1 &5534127101247981574
 GameObject:
@@ -238,6 +234,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035625717454301191}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec6f72611c34664488c91d215f34d36d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5169287134919395987}
   m_SourcePrefab: {fileID: 100100000, guid: ec6f72611c34664488c91d215f34d36d, type: 3}
 --- !u!4 &1439625140416041679 stripped
 Transform:
@@ -295,3 +295,16 @@ CapsuleCollider:
   m_Height: 1.9933162
   m_Direction: 1
   m_Center: {x: 0, y: 0.9272375, z: 0}
+--- !u!114 &5169287134919395987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779277942284093557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be65ba6fdca6a9b4884ebc2544947d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 12320708978522071}

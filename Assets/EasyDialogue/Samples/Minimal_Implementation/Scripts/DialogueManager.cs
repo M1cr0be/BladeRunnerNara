@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using EasyDialogue;
+using UnityEngine.Rendering.Universal.Internal;
 
 namespace EasyDialogue.Samples
 {
@@ -34,6 +35,7 @@ namespace EasyDialogue.Samples
         private Canvas myCanvas;
 
         private PlayerMovements playerMouvement;
+        private PlayerCam playerCamera;
 
         #endregion
 
@@ -47,6 +49,7 @@ namespace EasyDialogue.Samples
             easyDialogueManager.OnDialogueEnded += (EasyDialogueGraph _graph) => Debug.Log($"Dialogue ended on graph {_graph.name}");
             InitializeDialogue();
             playerMouvement = GameObject.Find("Player").GetComponent<PlayerMovements>();
+            playerCamera = Camera.main.GetComponent<PlayerCam>();
         }
 
         private void OnDialogueProgressedHandler(EasyDialogueGraph _graph, dialogue_line _line)
@@ -128,6 +131,10 @@ namespace EasyDialogue.Samples
             }
             else
             {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                playerMouvement.enabled = true;
+                playerCamera.enabled = true;
                 InitializeDialogue();
             }
         }
@@ -138,11 +145,8 @@ namespace EasyDialogue.Samples
         public void EndDialogue()
         {
             if (easyDialogueManager.EndDialogueEncounter(ref currentGraph))
-            {
-                InitializeDialogue();
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                playerMouvement.enabled = true;
+            {                
+                InitializeDialogue();                
             }
         }
 

@@ -8,18 +8,29 @@ public class StartDial : MonoBehaviour
 
     public EasyDialogue.EasyDialogueGraph Dialogue;
     public PlayerMovements playerMouvement;
+    public PlayerCam playerCamera;
     public Collider player;
+
+    bool HasEnter;
+
+    private void Start()
+    {
+        HasEnter = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Test");
-        if(other == player)
+        if (!HasEnter)
         {
-            Debug.Log("Test2");
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            playerMouvement.enabled = false;
-            DM.StartDialogueEncounter(ref Dialogue);
+            if (other == player)
+            {
+                HasEnter = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                playerMouvement.enabled = false;
+                playerCamera.enabled = false;
+                DM.StartDialogueEncounter(ref Dialogue);
+            }
         }
     }
 
