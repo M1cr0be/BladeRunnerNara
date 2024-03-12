@@ -10,6 +10,9 @@ public class Interactable : MonoBehaviour
 
     public UnityEvent onInteraction;
 
+    public float timeCost;
+    public bool hasInfo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,13 @@ public class Interactable : MonoBehaviour
     public void EnableOutline()
     {
         outline.enabled = true;
+    }
+
+    public void TimeCost()
+    {
+        // soustraire au temps général, le temps restant
+
+        // if (hasInfo) alors enregistre les info pour la scene suivante
     }
 
 }
