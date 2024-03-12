@@ -26,9 +26,13 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("A");
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange, npcLayer))
+                Debug.Log("B");
+
             {
+                Debug.Log("C");
                 NPC_Interractions npc = hit.collider.GetComponent<NPC_Interractions>();
                 if (npc != null)
                 {
