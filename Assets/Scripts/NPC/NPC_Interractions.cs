@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC_Interractions : MonoBehaviour
+
 {
+    public GameObject PNJ;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,27 @@ public class NPC_Interractions : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider other)
+    public class NPC : MonoBehaviour
+    {
+        public void PerformAction()
+        {
+            // Example: Play an animation
+            GetComponent<Animator>().Play("YourAnimationName");
+        }
+    }
+
+    /*public void PerformAction()
+    {
+        // Define the action here, e.g., playing an animation
+        Debug.Log("saleté");
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play("NPCReactToEmote");
+            Debug.Log("chien");
+        }
+    }
+    /*void OnTriggerEnter(Collider other)
     {
         Debug.Log("saleté");
         // Check if the collider belongs to the player's emote raycast
@@ -23,14 +45,13 @@ public class NPC_Interractions : MonoBehaviour
         {
             // Perform an action
             PerformAction(); 
-            //met l'action qu'il doit faire ici
         }
         else
         {
             Debug.Log("pute");
         }
     }
-    void PerformAction()
+    void PerformAction() //met l'action qu'il doit faire ici
     {
         // Access the Animator component attached to the NPC
         Animator animator = GetComponent<Animator>();
@@ -49,5 +70,5 @@ public class NPC_Interractions : MonoBehaviour
         // Assuming the NPC has an Animator component
         animator.Play("NPCReactToEmote");
 
-    }
+    }*/
 }
