@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Runtime.CompilerServices;
 
 public class HudController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI timeLoss;
     [SerializeField] float remainingTime;
 
     bool hasBeenCalled;
@@ -16,6 +18,7 @@ public class HudController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        timeLoss.enabled = false;
     }
 
     [SerializeField] TMP_Text interactionText;
@@ -61,8 +64,15 @@ public class HudController : MonoBehaviour
         {
             StartCoroutine(HideTimer(3f));
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
 
+            StartCoroutine(DecreaseTimer(30));
+        }
         
+
+
+
     }
 
     private void CallRichard()
@@ -87,16 +97,19 @@ public class HudController : MonoBehaviour
 
             yield return null;
         }
-
+        
         timerText.color = new Color(timerText.color.r, timerText.color.g, timerText.color.b, 1f);
-
-        yield return new WaitForSeconds(3000);
-
+        
+        yield return new WaitForSeconds(3);
+        
+        StartCoroutine(HideTimer(3f));
+        
 
     }
 
     private IEnumerator HideTimer(float duration)
     {
+        
         if (remainingTime > 10)
         {
             float initialAlpha = timerText.color.a;
@@ -116,13 +129,16 @@ public class HudController : MonoBehaviour
         }
     }
 
-    public void DecreaseTimer(int Cost)
-    {
+    public IEnumerator DecreaseTimer(int Cost)
+    {        
         StartCoroutine(ShowTimer(0.2f));
+        yield return new WaitForSeconds(1);
         remainingTime -= Cost;
-
-
-
+        timeLoss.enabled = true;
+        Debug.Log(Cost.ToString());
+        timeLoss.text = Cost.ToString();
+        yield return new WaitForSeconds(3);
+        timeLoss.enabled = false;
     }
 
     

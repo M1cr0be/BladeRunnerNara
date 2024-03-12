@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour
 
     public void TimeCost()
     {
-        // soustraire au temps général, le temps restant
+        // Declancher la fonction DecreaseTimer dans le HudController avec le temps en moins
 
         // if (hasInfo) alors enregistre les info pour la scene suivante
     }
