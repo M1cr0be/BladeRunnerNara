@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
         {            
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionRange))
-            {                
+            {      
                 NPC_Interractions npc = hit.collider.GetComponent<NPC_Interractions>();
                 if (npc != null)
                 {

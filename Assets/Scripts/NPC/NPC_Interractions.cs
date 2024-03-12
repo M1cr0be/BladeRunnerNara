@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC_Interractions : MonoBehaviour
-
 {
      
-        public void PerformAction()
-        {
-            // Example: Play an animation
-            GetComponent<Animator>().Play("YourAnimationName");
-            Debug.Log("Action performed on NPC");
+    public void PerformAction()
+    {        
+        // Example: Play an animation
+        GetComponent<Animator>().Play("YourAnimationName");
+        Debug.Log("Action performed on NPC");
     }
 
 
