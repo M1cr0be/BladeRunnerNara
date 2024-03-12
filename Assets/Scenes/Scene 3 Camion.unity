@@ -682,6 +682,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2464654697852976634, guid: becf2349bcc0a074fb8061c1a5e437fe,
         type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 1208820118}
+    - target: {fileID: 2464654697852976634, guid: becf2349bcc0a074fb8061c1a5e437fe,
+        type: 3}
+      propertyPath: TheNPC
+      value: 
+      objectReference: {fileID: 1208820118}
+    - target: {fileID: 2464654697852976634, guid: becf2349bcc0a074fb8061c1a5e437fe,
+        type: 3}
       propertyPath: npcLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}

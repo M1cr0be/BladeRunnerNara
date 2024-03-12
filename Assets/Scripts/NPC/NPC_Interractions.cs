@@ -6,9 +6,11 @@ public class NPC_Interractions : MonoBehaviour
 {
      
     public void PerformAction()
-    {        
+    {
+        Debug.Log("InNPC");
         // Example: Play an animation
-        GetComponent<Animator>().Play("YourAnimationName");
+        GetComponentInChildren<Animator>().Play("Salute");
+        //GetComponent<Animator>().Play("YourAnimationName");
         Debug.Log("Action performed on NPC");
     }
 

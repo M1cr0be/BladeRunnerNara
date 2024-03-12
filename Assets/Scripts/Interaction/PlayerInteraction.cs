@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float interactionRange = 5f; // The range within which the player can interact with NPCs
-    public LayerMask npcLayer; // Layer for NPCs
+    private float interactionRange = 99f; // The range within which the player can interact with NPCs
+    
 
     public float playerReach = 3f;
     Interactable currentInteractable;
@@ -25,13 +25,16 @@ public class PlayerInteraction : MonoBehaviour
         }*/
 
         if (Input.GetKeyDown(KeyCode.E))
-        {            
+        {
+            Debug.Log("E");
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionRange))
-            {      
+            {
+                Debug.Log("IsTheStuff");
                 NPC_Interractions npc = hit.collider.GetComponent<NPC_Interractions>();
                 if (npc != null)
                 {
+                    Debug.Log("mid");
                     npc.PerformAction(); // Assuming NPC has a method to perform an action
                 }
             }            
