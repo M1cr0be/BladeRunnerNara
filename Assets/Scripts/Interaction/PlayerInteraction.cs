@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public float interactionRange = 5f; // The range within which the player can interact with NPCs
+    public LayerMask npcLayer; // Layer for NPCs
+
     public float playerReach = 3f;
     Interactable currentInteractable;
 
@@ -21,36 +24,48 @@ public class PlayerInteraction : MonoBehaviour
             Emote1();
         }*/
 
-        
         if (Input.GetKeyDown(KeyCode.E))
         {
-            PerformEmote();        
-        }
-        
-
-        void PerformEmote()
-        {
-            // Assuming the emote is a simple animation, you can start it here
-            // Start your emote animation
-
-            // Cast a ray from the player's position in the direction they are facing
-            Debug.Log("lul");
             RaycastHit hit;
-            Debug.Log("biteu");
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange, npcLayer))
             {
-                Debug.Log("bonjour");
-                // The ray hit something, you can now send a message to the NPC
-                // For example, you could use a custom event or a direct method call
-                // depending on your architecture
-                GameObject emoteRaycastObject = new GameObject("EmoteRaycastObject");
-                emoteRaycastObject.transform.position = hit.point;
-                emoteRaycastObject.tag = "EmoteRaycast";
-                Debug.Log(hit.point);
+                NPC npc = hit.collider.GetComponent<NPC>();
+                if (npc != null)
+                {
+                    npc.PerformAction(); // Assuming NPC has a method to perform an action
+                }
             }
         }
 
+    /*if (Input.GetKeyDown(KeyCode.E))
+    {
+        PerformEmote();        
     }
+
+
+    void PerformEmote()
+    {
+        // Assuming the emote is a simple animation, you can start it here
+        // Start your emote animation
+
+        // Cast a ray from the player's position in the direction they are facing
+        Debug.Log("lul");
+        RaycastHit hit;
+        Debug.Log("biteu");
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        {
+            // Check if the hit object is the NPC
+            NPC_Interractions npc = hit.transform.GetComponent<NPC_Interractions>();
+            if (npc != null)
+            {
+                // Trigger the NPC's action
+                npc.PerformAction();
+            }
+        }
+    }*/
+
+
+}
 
     void CheckInteraction()
     {
