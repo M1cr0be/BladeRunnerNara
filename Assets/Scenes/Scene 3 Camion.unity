@@ -680,6 +680,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2464654697852976634, guid: becf2349bcc0a074fb8061c1a5e437fe,
+        type: 3}
+      propertyPath: npcLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464654697852976634, guid: becf2349bcc0a074fb8061c1a5e437fe,
+        type: 3}
+      propertyPath: interactionRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2503235929386475631, guid: becf2349bcc0a074fb8061c1a5e437fe,
         type: 3}
       propertyPath: m_Layer
@@ -1310,7 +1320,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
